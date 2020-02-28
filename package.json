@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "react": "npm start --prefix view",
-    "dev": "concurrently \"nodemon server.js\" \"npm run react\""
+    "dev": "nodemon server.js"
   },
   "author": "Łukasz Gronczakiewicz",
   "license": "ISC",

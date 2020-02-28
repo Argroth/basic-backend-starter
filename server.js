@@ -8,6 +8,14 @@ const app = express();
 // Serve the static files from the React app
 //app.use(express.static(path.join(__dirname, 'client/build')));
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', "http://localhost:3000");
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
+
 require('./routes/index-routes')(app);
 
 //###########################################################       Database         ######################################################################
